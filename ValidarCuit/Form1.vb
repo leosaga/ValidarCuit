@@ -9,7 +9,12 @@
             e.Handled = True
             Exit Sub
         End If
+
+
+
         Dim pos As Integer = TextBox1.SelectionStart
+        If pos < 4 Then e.Handled = True
+
         If e.KeyChar = "-" And pos <> 2 And pos <> 11 Then
             e.Handled = True
             Exit Sub
@@ -19,7 +24,45 @@
             Exit Sub
         End If
 
+        If TextBox1.Text.IndexOf("") > -1 Then Exit Sub
+
+
+
     End Sub
    
 
+    Private Sub personafisica_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles personafisica.CheckedChanged
+        hombre.Enabled = True
+        mujer.Enabled = True
+
+       
+
+      
+    End Sub
+
+    Private Sub personajuridica_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles personajuridica.CheckedChanged
+        hombre.Checked = False
+        mujer.Checked = False
+        hombre.Enabled = False
+        mujer.Enabled = False
+        TextBox1.Text = "30-"
+        TextBox1.Focus()
+        TextBox1.SelectionStart = TextBox1.Text.Length
+    End Sub
+
+    Private Sub hombre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles hombre.CheckedChanged
+        If hombre.Checked Then
+            TextBox1.Text = "20-"
+            TextBox1.Focus()
+            TextBox1.SelectionStart = TextBox1.Text.Length
+        End If
+    End Sub
+
+    Private Sub mujer_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mujer.CheckedChanged
+        If mujer.Checked Then
+            TextBox1.Text = "27-"
+            TextBox1.Focus()
+            TextBox1.SelectionStart = TextBox1.Text.Length
+        End If
+    End Sub
 End Class

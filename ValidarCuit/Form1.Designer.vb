@@ -55,6 +55,7 @@ Partial Class Form1
         'hombre
         '
         Me.hombre.AutoSize = True
+        Me.hombre.Enabled = False
         Me.hombre.Location = New System.Drawing.Point(6, 19)
         Me.hombre.Name = "hombre"
         Me.hombre.Size = New System.Drawing.Size(60, 17)
@@ -66,6 +67,7 @@ Partial Class Form1
         'mujer
         '
         Me.mujer.AutoSize = True
+        Me.mujer.Enabled = False
         Me.mujer.Location = New System.Drawing.Point(6, 47)
         Me.mujer.Name = "mujer"
         Me.mujer.Size = New System.Drawing.Size(50, 17)
