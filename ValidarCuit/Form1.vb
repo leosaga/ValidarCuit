@@ -11,9 +11,9 @@
         End If
 
 
-
         Dim pos As Integer = TextBox1.SelectionStart
-        If pos < 4 Then e.Handled = True
+        If pos < 3 Then e.Handled = True
+
 
         If e.KeyChar = "-" And pos <> 2 And pos <> 11 Then
             e.Handled = True
@@ -26,7 +26,7 @@
 
         If TextBox1.Text.IndexOf("") > -1 Then Exit Sub
 
-
+        TextBox1.Focus()
 
     End Sub
    
@@ -53,16 +53,19 @@
     Private Sub hombre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles hombre.CheckedChanged
         If hombre.Checked Then
             TextBox1.Text = "20-"
-            TextBox1.Focus()
-            TextBox1.SelectionStart = TextBox1.Text.Length
+
         End If
+        TextBox1.Focus()
+        TextBox1.SelectionStart = TextBox1.Text.Length
+
     End Sub
 
     Private Sub mujer_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mujer.CheckedChanged
         If mujer.Checked Then
             TextBox1.Text = "27-"
-            TextBox1.Focus()
-            TextBox1.SelectionStart = TextBox1.Text.Length
+
         End If
+        TextBox1.Focus()
+        TextBox1.SelectionStart = TextBox1.Text.Length
     End Sub
 End Class
