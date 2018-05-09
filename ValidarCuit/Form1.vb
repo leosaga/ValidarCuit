@@ -68,4 +68,54 @@
         TextBox1.Focus()
         TextBox1.SelectionStart = TextBox1.Text.Length
     End Sub
+
+    
+    Private Sub aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles aceptar.Click
+
+
+        Dim Ponderador As Integer
+        Dim Acumulado As Integer
+        Dim Digito As Integer
+        Dim Posicion As Integer
+        Dim cuit As String = TextBox1.Text.Substring(0, 2) + TextBox1.Text.Substring(3)
+        Ponderador = 2
+        Acumulado = 0
+
+        'Recorro la cadena de atrás para adelante
+        For Posicion = 10 To 1 Step -1
+            'Sumo las multiplicaciones de cada dígito x su ponderador
+            Acumulado = Acumulado + CInt(cuit.Substring(Posicion - 1, 1)) * Ponderador
+            Ponderador = Ponderador + 1
+
+            If Ponderador > 7 Then Ponderador = 2
+        Next
+
+        Digito = 11 - (Acumulado Mod 11)
+        If Digito = 11 Then Digito = 0
+ 
+
+        TextBox1.Text = TextBox1.Text + "-" + CStr(Digito)
+        'Dim x, s(9), m, c(9), d, i, acu As Integer
+        ''serie del texbox
+
+        's = {2,3,4,5,6,7,2,3,4,5}
+        'For x = 0 To 10
+        '    'salta la pocicion 2 q es el guion
+        '    If x <> 2 Then
+        '        d = CInt(TextBox1.Text.Substring(x, 1))
+        '        c(i) = d
+        '        i += 1
+
+        '    End If
+
+        'Next
+        'For x = 0 To 9
+        '    acu = acu + c(x) * s(x)
+        'Next
+        'm = 11- Mod (acu,11)
+        'If m = 11 Then
+        '    m = 0
+        'End If
+        'TextBox1.Text(+"-" + CStr(m))
+    End Sub
 End Class
