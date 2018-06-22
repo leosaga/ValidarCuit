@@ -31,16 +31,16 @@
     End Sub
    
 
-    Private Sub personafisica_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles personafisica.CheckedChanged
+    Private Sub personafisica_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles fisica.CheckedChanged
         hombre.Enabled = True
         mujer.Enabled = True
 
-       
 
-      
+
+
     End Sub
 
-    Private Sub personajuridica_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles personajuridica.CheckedChanged
+    Private Sub personajuridica_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles juridica.CheckedChanged
         hombre.Checked = False
         mujer.Checked = False
         hombre.Enabled = False
@@ -71,6 +71,7 @@
 
     
     Private Sub aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles aceptar.Click
+        If TextBox1.Text.Length = 13 Then Exit Sub
 
 
         Dim Ponderador As Integer
@@ -92,7 +93,16 @@
 
         Digito = 11 - (Acumulado Mod 11)
         If Digito = 11 Then Digito = 0
- 
+
+        If Digito = 10 Then
+            If fisica.Checked Then
+                TextBox1.Text = "23" + TextBox1.Text.Substring(2)
+            Else
+                TextBox1.Text = "33" + TextBox1.Text.Substring(2)
+            End If
+            Call aceptar_Click(sender, e)
+            Exit Sub
+        End If
 
         TextBox1.Text = TextBox1.Text + "-" + CStr(Digito)
         'Dim x, s(9), m, c(9), d, i, acu As Integer

@@ -26,12 +26,12 @@ Partial Class Form1
         Me.TextBox1 = New System.Windows.Forms.TextBox
         Me.hombre = New System.Windows.Forms.RadioButton
         Me.mujer = New System.Windows.Forms.RadioButton
-        Me.personafisica = New System.Windows.Forms.RadioButton
-        Me.personajuridica = New System.Windows.Forms.RadioButton
+        Me.fisica = New System.Windows.Forms.RadioButton
+        Me.juridica = New System.Windows.Forms.RadioButton
         Me.cuil = New System.Windows.Forms.Label
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.persona = New System.Windows.Forms.GroupBox
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
-        Me.GroupBox1.SuspendLayout()
+        Me.persona.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -76,27 +76,27 @@ Partial Class Form1
         Me.mujer.Text = "mujer"
         Me.mujer.UseVisualStyleBackColor = True
         '
-        'personafisica
+        'fisica
         '
-        Me.personafisica.AutoSize = True
-        Me.personafisica.Location = New System.Drawing.Point(0, 15)
-        Me.personafisica.Name = "personafisica"
-        Me.personafisica.Size = New System.Drawing.Size(90, 17)
-        Me.personafisica.TabIndex = 4
-        Me.personafisica.TabStop = True
-        Me.personafisica.Text = "persona fisica"
-        Me.personafisica.UseVisualStyleBackColor = True
+        Me.fisica.AutoSize = True
+        Me.fisica.Location = New System.Drawing.Point(0, 15)
+        Me.fisica.Name = "fisica"
+        Me.fisica.Size = New System.Drawing.Size(90, 17)
+        Me.fisica.TabIndex = 4
+        Me.fisica.TabStop = True
+        Me.fisica.Text = "persona fisica"
+        Me.fisica.UseVisualStyleBackColor = True
         '
-        'personajuridica
+        'juridica
         '
-        Me.personajuridica.AutoSize = True
-        Me.personajuridica.Location = New System.Drawing.Point(0, 47)
-        Me.personajuridica.Name = "personajuridica"
-        Me.personajuridica.Size = New System.Drawing.Size(99, 17)
-        Me.personajuridica.TabIndex = 5
-        Me.personajuridica.TabStop = True
-        Me.personajuridica.Text = "persona juridica"
-        Me.personajuridica.UseVisualStyleBackColor = True
+        Me.juridica.AutoSize = True
+        Me.juridica.Location = New System.Drawing.Point(0, 47)
+        Me.juridica.Name = "juridica"
+        Me.juridica.Size = New System.Drawing.Size(99, 17)
+        Me.juridica.TabIndex = 5
+        Me.juridica.TabStop = True
+        Me.juridica.Text = "persona juridica"
+        Me.juridica.UseVisualStyleBackColor = True
         '
         'cuil
         '
@@ -107,16 +107,16 @@ Partial Class Form1
         Me.cuil.TabIndex = 6
         Me.cuil.Text = "cuit / cuil"
         '
-        'GroupBox1
+        'persona
         '
-        Me.GroupBox1.Controls.Add(Me.personafisica)
-        Me.GroupBox1.Controls.Add(Me.personajuridica)
-        Me.GroupBox1.Location = New System.Drawing.Point(26, 44)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(109, 69)
-        Me.GroupBox1.TabIndex = 7
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "GroupBox1"
+        Me.persona.Controls.Add(Me.fisica)
+        Me.persona.Controls.Add(Me.juridica)
+        Me.persona.Location = New System.Drawing.Point(26, 44)
+        Me.persona.Name = "persona"
+        Me.persona.Size = New System.Drawing.Size(109, 69)
+        Me.persona.TabIndex = 7
+        Me.persona.TabStop = False
+        Me.persona.Text = "personas"
         '
         'GroupBox2
         '
@@ -127,7 +127,7 @@ Partial Class Form1
         Me.GroupBox2.Size = New System.Drawing.Size(98, 69)
         Me.GroupBox2.TabIndex = 8
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "sexo"
+        Me.GroupBox2.Text = "genero"
         '
         'Form1
         '
@@ -135,14 +135,14 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(478, 312)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.persona)
         Me.Controls.Add(Me.cuil)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.aceptar)
         Me.Name = "Form1"
         Me.Text = "Form1"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.persona.ResumeLayout(False)
+        Me.persona.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
@@ -153,10 +153,10 @@ Partial Class Form1
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents hombre As System.Windows.Forms.RadioButton
     Friend WithEvents mujer As System.Windows.Forms.RadioButton
-    Friend WithEvents personafisica As System.Windows.Forms.RadioButton
-    Friend WithEvents personajuridica As System.Windows.Forms.RadioButton
+    Friend WithEvents fisica As System.Windows.Forms.RadioButton
+    Friend WithEvents juridica As System.Windows.Forms.RadioButton
     Friend WithEvents cuil As System.Windows.Forms.Label
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents persona As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
 
 End Class
